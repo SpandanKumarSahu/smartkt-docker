@@ -1,0 +1,11 @@
+
+# TO PULL
+sudo docker pull spandankumarsahu/smartktdocker:proxy
+
+
+# TO START
+sudo docker run --name smartktd --security-opt="apparmor=unconfined" --cap-add=SYS_PTRACE -dit smartktdocker:proxy /bin/bash
+
+
+# TO GET INTO DOCKER
+sudo docker exec -it smartktd /bin/bash
