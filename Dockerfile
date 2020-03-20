@@ -1,17 +1,5 @@
 FROM ubuntu:16.04
 
-ENV HTTP_PROXY "http://172.16.2.30:8080"
-ENV HTTPS_PROXY "http://172.16.2.30:8080"
-ENV http_proxy "http://172.16.2.30:8080"
-ENV https_proxy "http://172.16.2.30:8080"
-ENV HTTP_PROXY=http://172.16.2.30:8080
-ENV HTTPS_PROXY=http://172.16.2.30:8080
-ENV http_proxy=http://172.16.2.30:8080
-ENV https_proxy=http://172.16.2.30:8080
-ENV NO_PROXY "127.0.0.1, localhost"
-
-COPY apt.conf /etc/apt/apt.conf.d/proxy.conf
-
 # Install dependencies
 RUN apt-get -qq update; \
     apt-get install -qqy --no-install-recommends \
@@ -28,11 +16,6 @@ RUN wget -nv --no-check-certificate -O llvm.tar.xz https://releases.llvm.org/6.0
 RUN wget -nv --no-check-certificate -O llvm.tar.xz.sig https://releases.llvm.org/6.0.1/clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-16.04.tar.xz.sig
 RUN tar xf llvm.tar.xz
 RUN cp -a clang+llvm-6.0.1-x86_64-linux-gnu-ubuntu-16.04/* /usr/local/
-
-
-# Set Git proxy
-RUN git config --global http.proxy 172.16.2.30:8080
-RUN git config --global https.proxy 172.16.2.30:8080
 
 # EXPOSE
 EXPOSE 5000

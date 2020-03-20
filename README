@@ -2,8 +2,8 @@
 sudo docker build -t smartktdocker:proxy .
 
 # TO PULL
-sudo docker pull spandankumarsahu/smartkt-docker:proxy
-
+[Inside KGP Network] sudo docker pull spandankumarsahu/smartkt-docker:proxy
+[Outside KGP] sudo docker pull spandankumarsahu/smartkt-docker:latest
 
 # TO START
 sudo docker run --name smartktd --security-opt="apparmor=unconfined" --cap-add=SYS_PTRACE -dit smartktdocker:proxy /bin/bash
