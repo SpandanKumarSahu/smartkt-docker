@@ -2,7 +2,7 @@
 sudo docker build -t smartktdocker:proxy .
 
 # TO PULL
-sudo docker pull spandankumarsahu/smartktdocker:proxy
+sudo docker pull spandankumarsahu/smartkt-docker:proxy
 
 
 # TO START
