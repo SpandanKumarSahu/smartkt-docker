@@ -18,7 +18,7 @@ RUN apt-get -qq update; \
         autoconf automake cmake dpkg-dev file git make patch curl \
         libc-dev libc++-dev libgcc-5-dev libstdc++-5-dev  \
         dirmngr gnupg2 lbzip2 wget xz-utils git ca-certificates \
-        libxml2-dev python3 python3-dev python3-pip vim;
+        libxml2-dev g++ python3 python3-dev python3-pip vim;
 
 # Signing keys
 RUN curl -k https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
